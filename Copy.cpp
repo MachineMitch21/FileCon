@@ -14,6 +14,7 @@ namespace fileMan {
 	Copy::Copy()
 	{
 		setOp("*>");
+		setOpName("Copy");
 	}
 
 	void Copy::copyTo(string source, string destination) {
@@ -35,7 +36,6 @@ namespace fileMan {
 			destinationFileStream.close();
 		}
 	}
-
 
 	// Test if copy operator is used
 	void Copy::checkOp(string toTest) {

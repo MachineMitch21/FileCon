@@ -15,6 +15,14 @@ string opBase::getOp() {
 	return Op;
 }
 
+void opBase::setOpName(string opName) {
+	OpName = opName;
+}
+
+string opBase::getOpName() {
+	return OpName;
+}
+
 opBase::~opBase()
 {
 }

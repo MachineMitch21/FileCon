@@ -14,6 +14,7 @@ namespace fileMan {
 	Move::Move()
 	{
 		setOp("->");
+		setOpName("Move");
 	}
 
 

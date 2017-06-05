@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include "Delete.h"
+#include <Windows.h>
 
 using std::string;
 using std::cout;
@@ -21,7 +22,6 @@ using fileMan::Move;
 using parse::Parse_Strings;
 
 void test_opChange(string toTest, Copy &c, Move &v, Delete &d);
-
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -54,9 +54,9 @@ void test_opChange(string toTest, Copy &c, Move &v, Delete &d) {
 		int answer;
 		string newOp;
 		cout << "Which operator would you like to change?:" << endl;
-		cout << "1. " << c.getOp() << endl;
-		cout << "2. " << v.getOp() << endl;
-		cout << "3. " << d.getOp() << endl;
+		cout << "1. " << "(*" << c.getOpName() << "*)::		" << c.getOp() << endl;
+		cout << "2. " << "(*" << v.getOpName() << "*)::		" << v.getOp() << endl;
+		cout << "3. " << "(*" << d.getOpName() << "*)::		" << d.getOp() << endl;
 		cin >> answer;
 		switch (answer)
 		{

@@ -5,14 +5,16 @@ using std::string;
 using std::cout;
 using std::endl;
 using std::exception;
+using std::vector;
+using parse::Parse_Strings;
 
 namespace fileMan {
 
 	Delete::Delete()
 	{
+		setOp("~");
+		setOpName("Delete");
 	}
-
-	string Delete::Op = "~";
 
 	void Delete::deleteP(string Path) {
 		try {
@@ -23,15 +25,16 @@ namespace fileMan {
 			cout << "Delete operation aborted." << endl;
 		}
 
-
 	}
 
-	string Delete::getOp() {
-		return Op;
-	}
-
-	void Delete::setOp(string op) {
-		Op = op;
+	void Delete::checkOp(string toTest) {
+		Parse_Strings p;
+		if (toTest.find(getOp()) != string::npos) {
+			vector<string> use(2);
+			use = p.split_string(toTest, getOp());
+			deleteP(use[0]);
+			p.test(p.getCheck());
+		}
 	}
 
 	Delete::~Delete()
